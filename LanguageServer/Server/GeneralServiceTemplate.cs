@@ -1,4 +1,4 @@
-﻿using LanguageServer.Client;
+using LanguageServer.Client;
 using LanguageServer.Parameters.General;
 using System;
 
@@ -17,18 +17,17 @@ namespace LanguageServer.Server {
 		public Proxy Proxy { get => _proxy; }
 
 		[JsonRpcMethod("initialize")]
-		protected virtual Result<InitializeResult, ResponseError<InitializeErrorData>> Initialize(InitializeParams @params) {
-			throw new NotImplementedException();
-		}
+		protected virtual Result<InitializeResult, ResponseError<InitializeErrorData>> Initialize(InitializeParams @params) => throw new NotImplementedException();
 
 		[JsonRpcMethod("initialized")]
 		protected virtual void Initialized() {
 		}
 
+		[JsonRpcMethod("$/setTraceNotification")]
+		protected virtual void SetTrace(SetTraceParams @params) { }
+
 		[JsonRpcMethod("shutdown")]
-		protected virtual VoidResult<ResponseError> Shutdown() {
-			throw new NotImplementedException();
-		}
+		protected virtual VoidResult<ResponseError> Shutdown() => throw new NotImplementedException();
 
 		[JsonRpcMethod("exit")]
 		protected virtual void Exit() {

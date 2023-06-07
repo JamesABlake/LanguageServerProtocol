@@ -35,6 +35,9 @@ namespace LanguageServer {
 		protected virtual void Initialized() {
 		}
 
+		[JsonRpcMethod("$/setTraceNotification")]
+		protected virtual void SetTrace(SetTraceParams @params) { }
+
 		[JsonRpcMethod("shutdown")]
 		protected virtual VoidResult<ResponseError> Shutdown() {
 			throw new NotImplementedException();
