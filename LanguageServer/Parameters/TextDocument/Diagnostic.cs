@@ -1,13 +1,11 @@
 ﻿using LanguageServer.Json;
 
-namespace LanguageServer.Parameters.TextDocument
-{
+namespace LanguageServer.Parameters.TextDocument {
 	/// <summary>
 	/// For <c>textDocument/codeAction</c> and <c>textDocument/publishDiagnostics</c>
 	/// </summary>
 	/// <seealso>Spec 3.7.0</seealso>
-	public class Diagnostic
-	{
+	public class Diagnostic {
 		/// <summary>
 		/// The range at which the message applies.
 		/// </summary>

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LanguageServer.Parameters.Client
-{
-    /// <summary>
-    /// For <c>client/registerCapability</c>
-    /// </summary>
-    public class DocumentLinkRegistrationOptions : TextDocumentRegistrationOptions
-    {
-        public bool? resolveProvider { get; set; }
-    }
+﻿namespace LanguageServer.Parameters.Client {
+	/// <summary>
+	/// For <c>client/registerCapability</c>
+	/// </summary>
+	public class DocumentLinkRegistrationOptions : TextDocumentRegistrationOptions {
+		public bool? resolveProvider { get; set; }
+	}
 }
