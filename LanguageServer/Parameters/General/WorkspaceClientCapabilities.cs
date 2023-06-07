@@ -1,4 +1,4 @@
-﻿namespace LanguageServer.Parameters.General
+namespace LanguageServer.Parameters.General
 {
     /// <summary>
     /// For <c>initialize</c>
@@ -46,8 +46,14 @@
 
         /// <summary>
         /// The client supports <c>workspace/configuration</c> requests.
-        /// </summary>
-        /// <seealso>Spec 3.6.0</seealso>
-        public bool? configuration { get; set; }
-    }
+		/// </summary>
+		/// <seealso>Spec 3.6.0</seealso>
+		public bool? configuration { get; set; }
+
+		/// <summary>
+		/// Capabilities specific to the semantic token requests scoped to the workspace.
+		/// </summary>
+		/// <seealso>Spec 3.16.0</seealso>
+		public SemanticTokensCapabilities semanticTokens { get; set; }
+	}
 }

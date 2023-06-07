@@ -1,4 +1,4 @@
-﻿using LanguageServer.Client;
+using LanguageServer.Client;
 using LanguageServer.Json;
 using LanguageServer.Parameters;
 using LanguageServer.Parameters.TextDocument;
@@ -145,17 +145,33 @@ namespace LanguageServer.Server
         /// </remarks>
         /// <param name="params"></param>
         /// <returns></returns>
-        /// <seealso cref="LanguageServer.Parameters.General.TextDocumentClientCapabilities"/>
-        /// <seealso>Spec 3.10.0</seealso>
-        [JsonRpcMethod("textDocument/documentSymbol")]
+		/// <seealso cref="LanguageServer.Parameters.General.TextDocumentClientCapabilities"/>
+		/// <seealso>Spec 3.10.0</seealso>
+		[JsonRpcMethod("textDocument/documentSymbol")]
         protected virtual Result<DocumentSymbolResult, ResponseError> DocumentSymbols(DocumentSymbolParams @params)
         {
-            throw new NotImplementedException();
-        }
+			throw new NotImplementedException();
+		}
 
-        /// <summary>
-        /// The document color request is sent from the client to the server
-        /// to list all color references found in a given text document.
+		/// <summary>
+		/// The request is sent from the client to the server to resolve 
+		/// semantic tokens for a given file. Semantic tokens are used 
+		/// to add additional color information to a file that depends 
+		/// on language specific symbol information. A semantic token 
+		/// request usually produces a large result. The protocol 
+		/// therefore supports encoding tokens with numbers.
+		/// </summary>
+		/// <param name="params"></param>
+		/// <returns></returns>
+		/// <seealso cref="LanguageServer.Parameters.General.SemanticTokensCapabilities"/>
+		/// <seealso>Spec 3.16.0</seealso>
+		[JsonRpcMethod("textDocument/semanticTokens")]
+		protected virtual Result<SemanticTokens, ResponseError> SemanticTokens(SemanticTokensParams @params) => throw new NotImplementedException();
+
+
+		/// <summary>
+		/// The document color request is sent from the client to the server
+		/// to list all color references found in a given text document.
         /// Along with the range, a color value in RGB is returned.
         /// </summary>
         /// <remarks>

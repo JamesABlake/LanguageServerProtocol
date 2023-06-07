@@ -1,4 +1,4 @@
-﻿using LanguageServer.Json;
+using LanguageServer.Json;
 
 namespace LanguageServer.Parameters.General
 {
@@ -132,12 +132,18 @@ namespace LanguageServer.Parameters.General
 
         /// <summary>
         /// The server provides execute command support.
-        /// </summary>
-        public ExecuteCommandOptions executeCommandProvider { get; set; }
+		/// </summary>
+		public ExecuteCommandOptions executeCommandProvider { get; set; }
 
-        /// <summary>
-        /// Workspace specific server capabilities
-        /// </summary>
+		/// <summary>
+		/// The server provides semantic tokens support.
+		/// </summary>
+		/// <seealso>Spec 3.16.0</seealso>
+		public SemanticTokensOptions semanticTokensProvider { get; set; }
+
+		/// <summary>
+		/// Workspace specific server capabilities
+		/// </summary>
         /// <seealso>Spec 3.6.0</seealso>
         public WorkspaceOptions workspace { get; set; }
 

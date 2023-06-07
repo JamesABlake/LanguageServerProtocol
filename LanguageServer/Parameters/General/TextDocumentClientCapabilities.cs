@@ -1,4 +1,4 @@
-﻿namespace LanguageServer.Parameters.General
+namespace LanguageServer.Parameters.General
 {
     /// <summary>
     /// For <c>initialize</c>
@@ -122,8 +122,14 @@
 
         /// <summary>
         /// Capabilities specific to <c>textDocument/foldingRange</c> requests.
-        /// </summary>
-        /// <seealso>Spec 3.10.0</seealso>
-        public FoldingRangeCapabilities foldingRange { get; set; }
-    }
+		/// </summary>
+		/// <seealso>Spec 3.10.0</seealso>
+		public FoldingRangeCapabilities foldingRange { get; set; }
+
+		/// <summary>
+		/// Capabilities specific to the semantic token requests scoped to the workspace.
+		/// </summary>
+		/// <seealso>Spec 3.16.0</seealso>
+		public SemanticTokensCapabilities semanticTokens { get; set; }
+	}
 }
