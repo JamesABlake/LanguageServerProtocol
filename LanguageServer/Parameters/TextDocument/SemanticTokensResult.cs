@@ -16,11 +16,11 @@
 		/// Not Implemented
 		/// </remarks>
 		/// <seealso>Spec 3.16.0</seealso>
-		public string resultId { get; set; }
+		public string? resultId { get; set; }
 
 		/// <summary>
 		/// The actual tokens.
 		/// </summary>
-		public uint[] data { get; set; }
+		public required uint[] data { get; set; }
 	}
 }

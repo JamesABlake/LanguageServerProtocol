@@ -3,9 +3,6 @@ using LanguageServer.Parameters;
 using LanguageServer.Parameters.General;
 using LanguageServer.Parameters.TextDocument;
 using LanguageServer.Parameters.Workspace;
-using System;
-using System.IO;
-using System.Threading;
 
 namespace LanguageServer {
 	public abstract class ServiceConnection : Connection {
@@ -234,7 +231,7 @@ namespace LanguageServer {
 		/// <seealso cref="LanguageServer.Parameters.General.SemanticTokensCapabilities"/>
 		/// <seealso>Spec 3.16.0</seealso>
 		[JsonRpcMethod("textDocument/semanticTokens/range")]
-		protected virtual Result<SemanticTokens, ResponseError> SemanticTokensRange(SemanticTokensParams @params) => throw new NotImplementedException();
+		protected virtual Result<SemanticTokens, ResponseError> SemanticTokensRange(SemanticTokensRangeParams @params) => throw new NotImplementedException();
 
 		/// <summary>
 		/// The request is sent from the client to the server to resolve 
@@ -264,7 +261,7 @@ namespace LanguageServer {
 		/// <seealso cref="LanguageServer.Parameters.General.SemanticTokensCapabilities"/>
 		/// <seealso>Spec 3.16.0</seealso>
 		[JsonRpcMethod("textDocument/semanticTokens/full/delta")]
-		protected virtual Result<SemanticTokens, ResponseError> SemanticTokensFullDelta(SemanticTokensParams @params) => throw new NotImplementedException();
+		protected virtual Result<SemanticTokensDelta, ResponseError> SemanticTokensFullDelta(SemanticTokensDeltaParams @params) => throw new NotImplementedException();
 
 		/// <summary>
 		/// The document color request is sent from the client to the server

@@ -37,6 +37,9 @@ v1.0.0: initial release.</PackageReleaseNotes>
     <DocumentationFile>bin\Release\netstandard1.3\LanguageServer.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
     <PackageReference Include="Matarillo.IO" Version="1.0.0" />
   </ItemGroup>
